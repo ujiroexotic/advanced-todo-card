@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Todo Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="todo-card high" data-testid="test-todo-card">
+    <div class="top-row">
+      <div class="title-group">
+        <input type="checkbox" id="todo-check" />
+        <div>
+          <h2 data-testid="test-todo-title" id="todo-title">Complete Frontend Wizards Stage 1A</h2>
+          <div data-testid="test-todo-priority-indicator" id="priority-indicator">Priority: High</div>
+        </div>
+      </div>
+
+      <select data-testid="test-todo-status-control" id="status-control" aria-label="Todo status">
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Done</option>
+      </select>
+    </div>
+
+    <button
+      data-testid="test-todo-expand-toggle"
+      id="expand-toggle"
+      aria-expanded="false"
+      aria-controls="todo-description"
+    >Expand</button>
+
+    <div
+      id="todo-description"
+      data-testid="test-todo-collapsible-section"
+    ></div>
+
+    <div aria-live="polite" class="time-box">
+      <span data-testid="test-todo-overdue-indicator" id="overdue-indicator"></span>
+      <span id="time-text"></span>
+    </div>
+
+    <div class="actions">
+      <button id="edit-btn">Edit</button>
+      <button>Delete</button>
+    </div>
+
+    <div data-testid="test-todo-edit-form" id="edit-form" class="hidden">
+      <label for="edit-title">Title</label>
+      <input data-testid="test-todo-edit-title-input" id="edit-title" />
+
+      <label for="edit-description">Description</label>
+      <textarea data-testid="test-todo-edit-description-input" id="edit-description"></textarea>
+
+      <label for="edit-priority">Priority</label>
+      <select data-testid="test-todo-edit-priority-select" id="edit-priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <label for="edit-date">Due Date</label>
+      <input type="datetime-local" data-testid="test-todo-edit-due-date-input" id="edit-date" />
+
+      <div class="actions">
+        <button data-testid="test-todo-save-button" id="save-btn">Save</button>
+        <button data-testid="test-todo-cancel-button" id="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
